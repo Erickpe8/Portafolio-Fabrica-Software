@@ -1,0 +1,195 @@
+         :root {
+            --shimmer-color-light: rgba(229, 231, 235, 0.8);
+            --shimmer-color-highlight-light: rgba(249, 250, 251, 1);
+            --shimmer-color-dark: rgba(75, 85, 99, 0.8);
+            --shimmer-color-highlight-dark: rgba(31, 41, 55, 1);
+        }
+
+         .dark {
+            --shimmer-color: var(--shimmer-color-dark);
+            --shimmer-color-highlight: var(--shimmer-color-highlight-dark);
+        }
+        
+        .light {
+            --shimmer-color: var(--shimmer-color-light);
+            --shimmer-color-highlight: var(--shimmer-color-highlight-light);
+        }
+
+        /* Estilos para pestañas de equipos */
+        .team-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 1rem;
+            position: relative;
+        }
+        
+        .team-tab {
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            font-weight: 500;
+            color: #6b7280;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .team-tab.active {
+            color: #4F46E5;
+            font-weight: 600;
+        }
+        
+        .team-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: #4F46E5;
+            border-radius: 3px 3px 0 0;
+        }
+        
+        .team-tab:hover:not(.active) {
+            color: #4F46E5;
+        }
+        
+        .team-content {
+            display: none;
+        }
+        
+        .team-content.active {
+            display: block;
+        }
+        
+        /* Borde gris para resaltar la pestaña seleccionada */
+        .team-tab.active-tab-indicator {
+            position: relative;
+        }
+        
+        .team-tab.active-tab-indicator::before {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: #d1d5db;
+            border-radius: 3px 3px 0 0;
+        }
+        
+        .dark .team-tab.active-tab-indicator::before {
+            background-color: #4b5563;
+        }
+        
+        
+        .shimmer-border {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .shimmer-border::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            z-index: -1;
+            background: linear-gradient(45deg, var(--shimmer-color), var(--shimmer-color-highlight), var(--shimmer-color));
+            background-size: 200% 200%;
+            border-radius: 14px;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0% {
+                background-position: 0% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+        
+        .skill-bar {
+            height: 10px;
+            border-radius: 5px;
+            background-color: #e5e7eb;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            border-radius: 5px;
+            transition: width 1s ease-in-out;
+        }
+        
+        .org-chart {
+            transition: all 0.3s ease;
+        }
+        
+        .org-chart-node {
+            transition: all 0.3s ease;
+        }
+        
+        .org-chart-node:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .org-chart-line {
+            position: absolute;
+            background-color: #d1d5db;
+            transition: background-color 0.3s;
+        }
+        
+        .dark .org-chart-line {
+            background-color: #4b5563;
+        }
+        
+        .tech-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .tech-icon:hover {
+            transform: scale(1.1);
+        }
+        
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d1d5db;
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s;
+        }
+        
+        .custom-checkbox:checked {
+            background-color: #4F46E5;
+            border-color: #4F46E5;
+        }
+        
+        .custom-checkbox:checked::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            width: 5px;
+            height: 10px;
+            border-right: 2px solid white;
+            border-bottom: 2px solid white;
+            margin-top: -1px;
+        }
+        
+        .dark .custom-checkbox {
+            border-color: #6b7280;
+        }

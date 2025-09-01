@@ -1,0 +1,28 @@
+@import './custom.css';
+@import "tailwindcss";
+
+.b{
+  border: 1px solid red;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+/* Si quieres control manual del modo oscuro */
+.dark {
+  color-scheme: dark;
+}
+
+/* Variables CSS personalizadas para modo oscuro si las necesitas */
+:root {
+  --color-background: #ffffff;
+  --color-foreground: #000000;
+}
+
+.dark {
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+}
