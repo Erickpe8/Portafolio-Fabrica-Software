@@ -93,9 +93,9 @@ const developerData = ref({
     },
 
     'yeison': {
-        name: 'Yeison Rolon',
+        name: 'Yeison Edward Rolon Ortiz',
         position: 'Desarrollador',
-        photo: '/img/fesc.png', // Cambiar la foto de Yeison
+        photo: new URL('@/assets/img/team_2/Yeison_edward_rolon_ortiz.jpg', import.meta.url).href,
         skills: ['.NET', 'Angular', 'SQL'],
         experience: 'Soporte y construcción de módulos de software.',
         projects: [

@@ -79,11 +79,11 @@
                 @click="showDeveloper('nick')">
                 <div class="w-20 h-20 mx-auto mb-3 rounded-full overflow-hidden">
                 <img
-                    src="/img/fesc.png"
+                    src="@/assets/img/team_1/Nick_ortega.jpg"
                     alt="Nick Ortega"
                     class="w-full h-full object-cover object-top" />
                 </div>
-                <h3 class="font-semibold text-gray-900 dark:text-white">Nick Ortega</h3>
+                <h3 class="font-semibold text-gray-900 dark:text-white">Nick Alejandro Ortega Mendez</h3>
                 <p class="text-base text-gray-600 dark:text-gray-400">Auxiliar de Desarrollo</p>
             </div>
         </div>
@@ -149,7 +149,7 @@ const modalStore = useModalStore();
     'nick': {
         name: 'Nick Ortega',
         position: 'Auxiliar de Desarrollo',
-        photo: '/img/fesc.png',
+        photo: new URL('@/assets/img/team_1/Nick_ortega.jpg', import.meta.url).href,
         skills: ['Soporte', 'Documentación', 'QA'],
         experience: 'Auxiliar de desarrollo y QA.',
         projects: [
