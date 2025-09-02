@@ -1,8 +1,11 @@
 import { defineStore } from 'pinia'
 
 // Mapea equipos con las tecnologías
-// team1 = Proyectos Externos (Ing. Manuel)  -> tech1 = .NET/Angular
-// team2 = Proyectos Internos (Ing. Galindo) -> tech2 = Laravel/Vue
+// Team1: Proyectos internos (Ing. Manuel)
+// Team2: Proyectos externos (Ing. Galindo)
+// Tech1: Tecnologias Manuel (Laravel, Vue)
+// Tech2: Tecnologias Galindo (.NET, Angular)
+
 const TEAM_TO_TECH = { team1: 'tech1', team2: 'tech2' }
 const TECH_TO_TEAM = { tech1: 'team1', tech2: 'team2' }
 
@@ -13,13 +16,12 @@ const VALID_TECHS = new Set(Object.keys(TECH_TO_TEAM))
 export const useTeamStore = defineStore('team', {
   state: () => ({
     activeTeam: 'team1', // por defecto: Ing. Manuel (Externos)
-    activeTech: 'tech1', // por defecto: .NET/Angular
+    activeTech: 'tech1', // Laravel, vue
   }),
 
   actions: {
     setActiveTeam(id) {
       if (!VALID_TEAMS.has(id)) return
-      // Si ya está seleccionado, no hagas nada (evita renders innecesarios)
       if (this.activeTeam === id) return
 
       this.activeTeam = id

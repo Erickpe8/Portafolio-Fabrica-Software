@@ -8,17 +8,18 @@
       <TeamTabs/>
       <TeamTextSection/>
 
-      <!-- team1 = Ing. Manuel (Externos) -> .NET/Angular -->
-      <TeamNetAngular v-if="teamStore.isTeamActive('team1')" />
-      <TeamLaravelVue v-else /> <!-- team2 = Ing. Galindo (Internos) -> Laravel/Vue -->
+      <!-- team1 = Ing. Manuel (Internos) -> Laravel/Vue -->
+      <TeamLaravelVue v-if="teamStore.isTeamActive('team1')" />
+      <!-- team2 = Ing. Galindo (Externos) -> .NET/Angular -->
+      <TeamNetAngular v-else />
 
       <!-- seccion de las tecnologias -->
       <TechTabs/>
       <TechTextSection/>
 
-      <!-- tech1 = .NET/Angular ; tech2 = Laravel/Vue -->
-      <TechNetAngular v-if="teamStore.isTechActive('tech1')" />
-      <TechLaravelVue v-else />
+      <!-- tech1 = Laravel/Vue ; tech2 = .NET/Angular -->
+      <TechLaravelVue v-if="teamStore.isTechActive('tech1')" />
+      <TechNetAngular v-else />
     </div>
 
     <Footer/>
