@@ -1,40 +1,49 @@
-// src/stores/teamStore.js
 import { defineStore } from 'pinia'
+
+// Mapea equipos con las tecnologías
+// team1 = Proyectos Externos (Ing. Manuel)  -> tech1 = .NET/Angular
+// team2 = Proyectos Internos (Ing. Galindo) -> tech2 = Laravel/Vue
+const TEAM_TO_TECH = { team1: 'tech1', team2: 'tech2' }
+const TECH_TO_TEAM = { tech1: 'team1', tech2: 'team2' }
+
+// (Opcional) sets de validación para fail-fast
+const VALID_TEAMS = new Set(Object.keys(TEAM_TO_TECH))
+const VALID_TECHS = new Set(Object.keys(TECH_TO_TEAM))
 
 export const useTeamStore = defineStore('team', {
   state: () => ({
-    activeTeam: 'team1', // Por defecto muestra el primer equipo
-    activeTech: 'tech1'  // Por defecto muestra la primera tecnología
+    activeTeam: 'team1', // por defecto: Ing. Manuel (Externos)
+    activeTech: 'tech1', // por defecto: .NET/Angular
   }),
-  
+
   actions: {
-    setActiveTeam(teamId) {
-      this.activeTeam = teamId
-      // Cuando cambias el equipo, automáticamente sincroniza la tecnología
-      if (teamId === 'team1') {
-        this.activeTech = 'tech1' // Laravel/Vue para equipo web
-      } else if (teamId === 'team2') {
-        this.activeTech = 'tech2' // .NET/Angular para equipo móvil
+    setActiveTeam(id) {
+      if (!VALID_TEAMS.has(id)) return
+      // Si ya está seleccionado, no hagas nada (evita renders innecesarios)
+      if (this.activeTeam === id) return
+
+      this.activeTeam = id
+      const mappedTech = TEAM_TO_TECH[id]
+      // sincroniza tecnología si no coincide
+      if (mappedTech && this.activeTech !== mappedTech) {
+        this.activeTech = mappedTech
       }
     },
-    
-    setActiveTech(techId) {
-      this.activeTech = techId
-    }
+
+    setActiveTech(id) {
+      if (!VALID_TECHS.has(id)) return
+      if (this.activeTech === id) return
+
+      this.activeTech = id
+      const mappedTeam = TECH_TO_TEAM[id]
+      if (mappedTeam && this.activeTeam !== mappedTeam) {
+        this.activeTeam = mappedTeam
+      }
+    },
   },
-  
+
   getters: {
-    isTeamActive: (state) => (teamId) => {
-      return state.activeTeam === teamId
-    },
-    
-    isTechActive: (state) => (techId) => {
-      return state.activeTech === techId
-    },
-    
-    // Getter para obtener la tecnología correspondiente al equipo activo
-    getTeamTech: (state) => {
-      return state.activeTeam === 'team1' ? 'tech1' : 'tech2'
-    }
-  }
+    isTeamActive: (s) => (id) => s.activeTeam === id,
+    isTechActive: (s) => (id) => s.activeTech === id,
+  },
 })
