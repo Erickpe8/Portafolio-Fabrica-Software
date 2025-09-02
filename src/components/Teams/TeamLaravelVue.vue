@@ -34,7 +34,7 @@
                 @click="showDeveloper('santiago')">
                 <div class="w-20 h-20 mx-auto mb-3 rounded-full overflow-hidden">
                     <img
-                        src="@/assets/img/team_1/Sebastian_Rueda_Quintero.jpeg"
+                        src="@/assets/img/team_1/Santiago_Rueda_Quintero.jpeg"
                         alt="Santiago Rueda Quintero"
                         class="w-full h-full object-cover object-top" />
                 </div>
@@ -48,7 +48,7 @@
                 @click="showDeveloper('erick')">
                     <div class="w-20 h-20 mx-auto mb-3 rounded-full overflow-hidden">
                         <img
-                            src="@/assets/img/team_1/Erick_Sebastian_Perez_Carbajal.jpeg"
+                            src="@/assets/img/team_1/Erick_Sebastian_Perez_Carvajal.jpeg"
                             alt="Erick Sebastian Pérez Carvajal"
                             class="w-full h-full object-cover object-top" />
                     </div>

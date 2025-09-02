@@ -49,11 +49,10 @@
                 @click="showDeveloper('yeison')">
                     <div class="w-20 h-20 mx-auto mb-3 rounded-full overflow-hidden">
                     <img
-                        src="/img/fesc.png"
-                        alt="Yeison Rolon"
-                        class="w-full h-full object-cover object-top" />
+                        src="@/assets/img/team_2/Yeison_edward_rolon_ortiz.jpg"
+                        alt="Yeison Rolon" />
                     </div>
-                <h3 class="font-semibold text-gray-900 dark:text-white">Yeison Eduard Rolón</h3>
+                <h3 class="font-semibold text-gray-900 dark:text-white">Yeison Edward Rolón Ortiz</h3>
                 <p class="text-base text-gray-600 dark:text-gray-400">Desarrollador de Software</p>
             </div>
         </div>
