@@ -1,73 +1,79 @@
 <template>
     <div class="py-16 bg-white dark:bg-gray-900 transition-colors">
-    <div class="container mx-auto px-4">
+        <div class="container mx-auto px-4">
         <div class="org-chart relative max-w-5xl mx-auto">
-        <!-- Líneas de conexión -->
-        <div
-            class="org-chart-line hidden md:block absolute top-[140px] left-1/2 w-0.5 h-16 transform -translate-x-1/2">
-        </div>
-        <div class="org-chart-line hidden md:block absolute top-[156px] left-[25%] w-[50%] h-0.5"></div>
-        <div class="org-chart-line hidden md:block absolute top-[156px] left-[25%] w-0.5 h-16"></div>
-        <div class="org-chart-line hidden md:block absolute top-[156px] left-[75%] w-0.5 h-16"></div>
+            <!-- Líneas de conexión -->
+            <div class="org-chart-line hidden md:block absolute top-[140px] left-1/2 w-0.5 h-16 transform -translate-x-1/2"></div>
+            <div class="org-chart-line hidden md:block absolute top-[156px] left-[25%] w-[50%] h-0.5"></div>
+            <div class="org-chart-line hidden md:block absolute top-[156px] left-[25%] w-0.5 h-16"></div>
+            <div class="org-chart-line hidden md:block absolute top-[156px] left-[75%] w-0.5 h-16"></div>
 
-        <!-- Nodo principal (Líder) -->
-        <div class="flex justify-center mb-16 relative z-20">
+            <!-- Nodo principal (Líder) -->
+            <div class="flex justify-center mb-16 relative z-20">
             <div
                 class="org-chart-node bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 w-64 text-center cursor-pointer transition-all hover:shadow-xl"
-                @click="showDeveloper('lider')">
+                @click="openTeamMemberModal('lider')"
+            >
                 <div class="w-24 h-24 mx-auto mb-3 rounded-full overflow-hidden">
-                    <img
-                        src="@/assets/img/team_1/Jesus_Manuel_Parada.jpeg"
-                        alt="Jesús Manuel Parada L."
-                        class="w-full h-full object-cover object-top" />
+                <img
+                    src="@/assets/img/team_1/Jesus_Manuel_Parada.jpeg"
+                    alt="Jesús Manuel Parada L."
+                    class="w-full h-full object-cover object-top"
+                />
                 </div>
                 <h3 class="font-semibold text-gray-900 dark:text-white">Jesús Manuel Parada L.</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-400">Líder de Desarrollo</p>
             </div>
-        </div>
+            </div>
 
-        <!-- Nodos secundarios (Santiago y Erick) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <!-- Nodos secundarios (Santiago y Erick) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             <!-- Santiago Rueda -->
             <div
                 class="org-chart-node bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 text-center cursor-pointer transition-all hover:shadow-xl"
-                @click="showDeveloper('santiago')">
+                @click="openTeamMemberModal('santiago')"
+            >
                 <div class="w-20 h-20 mx-auto mb-3 rounded-full overflow-hidden">
-                    <img
-                        src="@/assets/img/team_1/Santiago_Rueda_Quintero.jpeg"
-                        alt="Santiago Rueda Quintero"
-                        class="w-full h-full object-cover object-top" />
+                <img
+                    src="@/assets/img/team_1/Santiago_Rueda_Quintero.jpeg"
+                    alt="Santiago Rueda Quintero"
+                    class="w-full h-full object-cover object-top"
+                />
                 </div>
                 <h3 class="font-semibold text-gray-900 dark:text-white">Santiago Rueda Quintero</h3>
                 <p class="text-base text-gray-600 dark:text-gray-400">Backend</p>
             </div>
 
-            <!-- Erick Perez -->
+            <!-- Erick Pérez -->
             <div
                 class="org-chart-node bg-white dark:bg-gray-800 rounded-lg shadow-lg p-4 text-center cursor-pointer transition-all hover:shadow-xl"
-                @click="showDeveloper('erick')">
-                    <div class="w-20 h-20 mx-auto mb-3 rounded-full overflow-hidden">
-                        <img
-                            src="@/assets/img/team_1/Erick_Sebastian_Perez_Carvajal.jpeg"
-                            alt="Erick Sebastian Pérez Carvajal"
-                            class="w-full h-full object-cover object-top" />
-                    </div>
+                @click="openTeamMemberModal('erick')"
+            >
+                <div class="w-20 h-20 mx-auto mb-3 rounded-full overflow-hidden">
+                <img
+                    src="@/assets/img/team_1/Erick_Sebastian_Perez_Carvajal.jpeg"
+                    alt="Erick Sebastian Pérez Carvajal"
+                    class="w-full h-full object-cover object-top"
+                />
+                </div>
                 <h3 class="font-semibold text-gray-900 dark:text-white">Erick Sebastian Pérez Carvajal</h3>
                 <p class="text-base text-gray-600 dark:text-gray-400">Backend</p>
             </div>
-        </div>
+            </div>
 
-        <!-- Nodos terciarios (Auxiliares: Nelly y Nick) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Nelly Cano-->
+            <!-- Nodos terciarios (Auxiliares: Nelly y Nick) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Nelly Cano -->
             <div
                 class="org-chart-node bg-white dark:bg-gray-800 rounded-2xl shadow p-4 text-center cursor-pointer transition-all hover:shadow-xl"
-                @click="showDeveloper('nelly')">
+                @click="openTeamMemberModal('nelly')"
+            >
                 <div class="w-20 h-20 mx-auto mb-3 rounded-full overflow-hidden">
                 <img
                     src="@/assets/img/team_1/Nelly_Fabiola_Cano_Oviedo.jpeg"
                     alt="Nelly Fabiola Cano Oviedo"
-                    class="w-full h-full object-cover object-top" />
+                    class="w-full h-full object-cover object-top"
+                />
                 </div>
                 <h3 class="font-semibold text-gray-900 dark:text-white">Nelly Fabiola Cano Oviedo</h3>
                 <p class="text-base text-gray-600 dark:text-gray-400">Auxiliar de Desarrollo</p>
@@ -76,30 +82,32 @@
             <!-- Nick -->
             <div
                 class="org-chart-node bg-white dark:bg-gray-800 rounded-2xl shadow p-4 text-center cursor-pointer transition-all hover:shadow-xl"
-                @click="showDeveloper('nick')">
+                @click="openTeamMemberModal('nick')"
+            >
                 <div class="w-20 h-20 mx-auto mb-3 rounded-full overflow-hidden">
                 <img
                     src="@/assets/img/team_1/Nick_ortega.jpg"
                     alt="Nick Ortega"
-                    class="w-full h-full object-cover object-top" />
+                    class="w-full h-full object-cover object-top"
+                />
                 </div>
                 <h3 class="font-semibold text-gray-900 dark:text-white">Nick Alejandro Ortega Mendez</h3>
                 <p class="text-base text-gray-600 dark:text-gray-400">Auxiliar de Desarrollo</p>
             </div>
+            </div>
         </div>
         </div>
-    </div>
     </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { useModalStore } from '@/stores/modalStore';
+import { ref } from 'vue'
+import { useModalStore } from '@/stores/modalStore'
 
-const modalStore = useModalStore();
+const modalStore = useModalStore()
 
-    const developerData = ref({
-    'lider': {
+    const teamMembersById = ref({
+    lider: {
         name: 'Jesús Manuel Parada L.',
         position: 'Líder de Desarrollo',
         photo: new URL('@/assets/img/team_1/Jesus_Manuel_Parada.jpeg', import.meta.url).href,
@@ -111,10 +119,10 @@ const modalStore = useModalStore();
         ]
     },
 
-    'santiago': {
+    santiago: {
         name: 'Santiago Rueda Quintero',
         position: 'Backend',
-        photo: new URL('@/assets/img/team_1/Sebastian_Rueda_Quintero.jpeg', import.meta.url).href,
+        photo: new URL('@/assets/img/team_1/Santiago_Rueda_Quintero.jpeg', import.meta.url).href,
         skills: ['Laravel', 'PHP', 'MySQL', 'API REST', 'Vue'],
         experience: 'Backend y arquitectura de datos.',
         projects: [
@@ -123,10 +131,10 @@ const modalStore = useModalStore();
         ]
     },
 
-    'erick': {
+    erick: {
         name: 'Erick Sebastian Pérez Carvajal',
         position: 'Backend',
-        photo: new URL('@/assets/img/team_1/Erick_Sebastian_Perez_Carbajal.jpeg', import.meta.url).href,
+        photo: new URL('@/assets/img/team_1/Erick_Sebastian_Perez_Carvajal.jpeg', import.meta.url).href,
         skills: ['Laravel', 'Postman', 'Figma', 'Dirección de proyectos', 'Documentación'],
         experience: 'Backend con foco en Laravel y dirección de proyectos. Interés especial en documentación clara.',
         projects: [
@@ -135,7 +143,7 @@ const modalStore = useModalStore();
         ]
     },
 
-    'nelly': {
+    nelly: {
         name: 'Nelly Fabiola Cano Oviedo',
         position: 'Auxiliar de Desarrollo',
         photo: new URL('@/assets/img/team_1/Nelly_Fabiola_Cano_Oviedo.jpeg', import.meta.url).href,
@@ -146,22 +154,20 @@ const modalStore = useModalStore();
         ]
     },
 
-    'nick': {
+    nick: {
         name: 'Nick Ortega',
         position: 'Auxiliar de Desarrollo',
         photo: new URL('@/assets/img/team_1/Nick_ortega.jpg', import.meta.url).href,
         skills: ['Soporte', 'Documentación', 'QA'],
         experience: 'Auxiliar de desarrollo y QA.',
-        projects: [
-        { name: 'Soporte a módulos de eventos', url: '#' }
-        ]
+        projects: [{ name: 'Soporte a módulos de eventos', url: '#' }]
     }
-    });
+})
 
-    const showDeveloper = (developerId) => {
-    const developer = developerData.value[developerId];
-    if (developer) modalStore.openModal(developer);
-    };
-    </script>
+const openTeamMemberModal = (teamMemberId) => {
+    const teamMember = teamMembersById.value[teamMemberId]
+    if (teamMember) modalStore.openModal(teamMember)
+}
+</script>
 
 <style lang="css" scoped></style>
