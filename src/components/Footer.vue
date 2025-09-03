@@ -56,22 +56,22 @@ import { ref, computed } from 'vue';
 
 // Datos reactivos
 const institution = {
-  name: 'FESC',
-  description: 'Fundación de Estudios Superiores Comfanorte',
-  founding: 'Formando profesionales en tecnología desde 1995.'
-};
+    name: 'FESC',
+    description: 'Fundación de Estudios Superiores Comfanorte',
+    founding: 'Formando profesionales en tecnología desde 1995.'
+    };
 
 const contacts = [
-  { icon: 'ri-map-pin-line', info: 'Av. 5 #15-27, Cúcuta, Colombia' },
-  { icon: 'ri-phone-line', info: '+57 607 5829292' },
-  { icon: 'ri-mail-line', info: 'info@fesc.edu.co' }
+    { icon: 'ri-map-pin-line', info: 'Av. 5 #15-27, Cúcuta, Colombia' },
+    { icon: 'ri-phone-line', info: '+57 607 5829292' },
+    { icon: 'ri-mail-line', info: 'info@fesc.edu.co' }
 ];
 
 const socialMedia = [
-  { name: 'Facebook', icon: 'ri-facebook-fill', url: '#' },
-  { name: 'Twitter', icon: 'ri-twitter-x-line', url: '#' },
-  { name: 'Instagram', icon: 'ri-instagram-fill', url: '#' },
-  { name: 'LinkedIn', icon: 'ri-linkedin-fill', url: '#' }
+    { name: 'Facebook', icon: 'ri-facebook-fill', url: 'https://www.facebook.com/share/1RpuYMZhxH/' },
+    { name: 'Twitter', icon: 'ri-twitter-x-line', url: 'https://x.com/fesc_superior?t=0Y8V_kwiq_uXHSHtqYS-yQ&s=09' },
+    { name: 'Instagram', icon: 'ri-instagram-fill', url: 'https://www.instagram.com/fesc.edusuperior/' },
+    { name: 'LinkedIn', icon: 'ri-linkedin-fill', url: 'https://www.linkedin.com/company/fesc-educaci%C3%B3n-superior/about/' }
 ];
 
 const email = ref('');
