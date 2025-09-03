@@ -49,22 +49,22 @@ Este repositorio corresponde al **proyecto base** antes de aplicar refactorizaci
 Fue la primera versión implementada por el **Ingeniero Manuel Parada**, y sirve como referencia del **diseño y la organización original** de la Fábrica de Software.  
 
 ---
+Durante esta primera refactorización se aplicaron mejoras enfocadas en **legibilidad, mantenibilidad y arquitectura ligera** del proyecto. Se estandarizaron nombres de variables y componentes, se reorganizaron assets eliminando duplicados, se ajustó la lógica de `Welcome.vue` para asignar correctamente equipos y tecnologías, y se aplicó el patrón **Strategy** para el renderizado dinámico en secciones de Team y Tech.  
 
-## Refactorización y Mejoras Aplicadas
-
-Actualmente el proyecto se encuentra en proceso de refactorización a mi cargo, Erick Sebastián Pérez Carvajal, estudiante de Ingeniería de Software y miembro de la Unidad de Desarrollo FESC. Estoy aprovechando esta oportunidad para profundizar en el uso de este framework (Vue.js), en JavaScript y en pruebas de software, con el propósito de adquirir la experiencia necesaria para brindar soporte a este portafolio y, en el futuro, completarlo según la visión con la que fue inicialmente planteado.
-
-### Principios y buenas prácticas implementadas
+### Principios y buenas prácticas implementadas  
 - **KISS (Keep It Simple, Stupid):** simplificación del código, evitando complejidad innecesaria.  
 - **DRY (Don’t Repeat Yourself):** eliminación de duplicidad en componentes y funciones.  
 - **Nombres claros y consistentes:** variables, props y componentes ahora siguen un estándar uniforme.  
 - **Organización de assets y rutas:** corrección de duplicados y estandarización de nombres.  
+- **Accesibilidad:** mejoras en modales con cierre por tecla ESC y click fuera.  
+- **Patrones de diseño:** aplicación inicial del patrón **Strategy** para el renderizado dinámico en secciones de Team y Tech.  
 
-### Cambios realizados
-- Refactorización de componentes (`TeamTextSection`, `Welcome`, `TeamLaravelVue`, `TeamNetAngular`).  
-- Texto dinámico en secciones y renderizado más claro.  
-- Reorganización de imágenes y recursos estáticos.  
-- Preparación de la base técnica para integrar pruebas y mejoras de accesibilidad.  
+### Cambios realizados  
+- Refactorización de componentes (`TeamTextSection`, `Welcome`, `TeamLaravelVue`, `TeamNetAngular`) con lógica más clara y texto dinámico.  
+- Reestructuración de imágenes y recursos estáticos, eliminando duplicados y mejorando la compilación.  
+- Mejora del `ModalDev` con funciones de accesibilidad (cierre con tecla ESC y click fuera).  
+- Limpieza de archivos de configuración que no se utilizaban en el entorno local.  
+- Actualización del `README.md` y preparación de la base técnica para pruebas y accesibilidad.  
 
 ---
 
